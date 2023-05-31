@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="Webbinlämning.css">
+</head>
+<body>
+
+  <h1 id="addHeader"></h1>
+  <p id="datum"></p>
+  <img id="image" src="hassan123.png" alt="Bilden kunde inte laddas">
+
+  <div class="stordiv1">
+    <div class="stordiv2">
+      <div class="knappar">
+        <button type="button" onclick="changeColor()" class="button">Change Background</button>
+        <button type="button" onclick="addHeader()" class="button">Good vibes</button>
+        <button type="button" onclick="showTime()" class="button">Time</button>
+      </div>
+
+      <div class="knappar">
+        <button type="button" onclick="changeImage()" class="button">Change picture</button>
+        <button type="button" onclick="removeImage()" class="button">Hide picture</button>
+        <button type="button" onclick="showImage()"class="button">Show picture</button>
+     
+      </div>
+
+      <div class="knappar">
+        <button class="button">Header</button>
+        <button class="button">Remove Header</button>
+        <button class="button">Show Header</button>
+      </div>
+    </div>
+  </div>
+
+  <h1 id="thanks">Tack för att du använder min sida!!</h1>
+  
+  <script>
+  
+  
+  function colorGenerator() {
+  const hex = '0123456789ABCDEF';
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function changeColor()
+{
+  document.body.style.backgroundColor = colorGenerator();
+}
+
+function addHeader() {
+  var heading = document.getElementById('addHeader');
+  heading.innerHTML = 'Jag heter Hassan';
+}
+
+function showTime() {
+  document.getElementById('datum').innerHTML = Date();
+}
+
+function changeImage() {
+  var img = document.getElementById('image');
+  img.src = 'hassan123123.png';
+}
+
+function removeImage() {
+  var img = document.getElementById('image');
+  img.remove();
+}
+var img5;
+function showImage() {
+
+    if(img5==1)
+      {
+        document.getElementById('image').style.display="inline";
+        return img5=0;
+      }
+    else
+      {
+        document.getElementById('image').style.display="none";
+        return img5=1;
+      }
+
+}
+
+  </script>
+
+</body>
+</html>
